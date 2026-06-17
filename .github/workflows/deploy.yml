@@ -1,0 +1,24 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+
+jobs:
+
+  deploy:
+
+    uses: divyasingh0/az_tf_workflow/.github/workflows/terraform-application.yml@v1.0.0
+
+    with:
+      environment: ${{ github.event.inputs.environment }}
+      action: apply
+
+    secrets: inherit
