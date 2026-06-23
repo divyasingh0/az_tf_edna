@@ -22,3 +22,5 @@ output "resource_group_name" {
   description = "Auto-generated resource group name for this workload."
   value       = module.edna_storage.resource_group_name_generated
 }
+
+

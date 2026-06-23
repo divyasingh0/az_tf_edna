@@ -8,34 +8,40 @@
 # template and module layers. Nothing else belongs here.
 # ══════════════════════════════════════════════════════════════════════════════
 
-terraform {
-  required_version = ">= 1.3.0"
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.90"
-    }
-  }
-}
+# terraform {
+#   required_version = ">= 1.3.0"
+#   required_providers {
+#     azurerm = {
+#       source  = "hashicorp/azurerm"
+#       version = "~> 3.90"
+#     }
+#   }
+# }
 
-provider "azurerm" {
-  features {}
-  # Authentication is via OIDC Workload Identity Federation in CI/CD.
-  # Never use client_secret here.
-}
-
-# ── STORAGE ACCOUNT ──────────────────────────────────────────────────────────
-# Calls the platform-approved storage-account template by pinned Git tag.
-
+# provider "azurerm" {
+#   features {}
+# storage_use_azuread = true 
+# }
+# # ── STORAGE ACCOUNT ──────────────────────────────────────────────────────────
+# # Calls the platform-approved storage-account template by pinned Git tag.
 
 module "edna_storage" {
-source = "https://github.com/divyasingh0/az_tf_templates/tree/eab6fc8c8d5ae362f3a94bb4579b4102fb31d6b8/templates/stoarge-account"
+  source = "git::https://github.com/divyasingh0/az_tf_templates.git//templates/stoarge-account?ref=47f7f69a6f1b29cefdf51502976b5c7fd67118fe"
 
-  # ── Who we are (business identity) ────────────────────────────────────────
-  app_name    = var.app_name
-  environment = var.environment
-  location    = var.location
-  
+  # variables...
+  app_name            = var.app_name
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
+  vnet_address_space  = var.vnet_address_space
+  pe_subnet_prefix    = var.pe_subnet_prefix
+  dns_servers         = var.dns_servers
+
+  mandatory_tags      = var.mandatory_tags
+  optional_tags       = var.optional_tags
+  custom_tags         = var.custom_tags
 }
 
 
+ 
