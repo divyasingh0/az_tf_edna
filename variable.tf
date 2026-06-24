@@ -44,7 +44,7 @@ variable "dns_servers" {
   default     = []
 }
 
- variable "mandatory_tags" {
+variable "mandatory_tags" {
   description = "Mandatory governance tags"
 
   type = object({
