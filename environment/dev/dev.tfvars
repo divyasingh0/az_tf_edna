@@ -13,7 +13,6 @@ app_name                     = "edna"
 environment                  = "dev"
 location                     = "eastus2"
 resource_group_name          = "rg-edna-dev"
-private_endpoint_subnet_name = "pesubnetnamedev"
 vnet_address_space           = "10.10.0.0/16"
 pe_subnet_prefix             = "10.10.1.0/24"
 

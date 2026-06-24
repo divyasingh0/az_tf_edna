@@ -33,10 +33,7 @@ variable "vnet_address_space" {
   type        = string
 }
 
-variable "pe_subnet_prefix" {
-  description = "CIDR block for the PE subnet. Must sit inside vnet_address_space. E.g. 10.0.1.0/24"
-  type        = string
-}
+
 
 variable "dns_servers" {
   description = "Optional custom DNS servers."
