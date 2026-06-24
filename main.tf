@@ -37,7 +37,6 @@ module "edna_storage" {
   vnet_address_space           = var.vnet_address_space
   pe_subnet_prefix             = var.pe_subnet_prefix
   dns_servers                  = var.dns_servers
-  private_endpoint_subnet_name = var.private_endpoint_subnet_name
   mandatory_tags               = var.mandatory_tags
   optional_tags                = var.optional_tags
   custom_tags                  = var.custom_tags
