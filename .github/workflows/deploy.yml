@@ -12,13 +12,14 @@ on:
           - prod
 
 jobs:
-
   deploy:
-
     uses: divyasingh0/az_tf_workflow/.github/workflows/terraform-application.yml@v1.0.0
 
     with:
       environment: ${{ github.event.inputs.environment }}
       action: apply
+      client_id: ${{ vars.AZURE_CLIENT_ID }}
+      tenant_id: ${{ vars.AZURE_TENANT_ID }}
+      subscription_id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
 
     secrets: inherit
