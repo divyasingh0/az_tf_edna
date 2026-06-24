@@ -13,7 +13,6 @@ app_name            = "edna"
 environment         = "dev"
 location            = "eastus2"
 resource_group_name = "rg-edna-dev"
-
 vnet_address_space  = "10.10.0.0/16"
 pe_subnet_prefix    = "10.10.1.0/24"
 
@@ -25,7 +24,7 @@ mandatory_tags = {
   terraform           = "true"
   app                 = "EDNA"
   change_notification = "Email:edna@burlington.com+Teams:edna"
-  maintenance_window  = "sun-00:00-03:00"
+  maintenance_window  = "sun-00:00-04:00"
   criticality         = "medium"
   data_classification = "official-use"
 }

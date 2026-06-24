@@ -34,14 +34,13 @@ module "edna_storage" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  vnet_address_space  = var.vnet_address_space
-  pe_subnet_prefix    = var.pe_subnet_prefix
-  dns_servers         = var.dns_servers
-
-  mandatory_tags      = var.mandatory_tags
-  optional_tags       = var.optional_tags
-  custom_tags         = var.custom_tags
+  vnet_address_space = var.vnet_address_space
+  pe_subnet_prefix   = var.pe_subnet_prefix
+  dns_servers        = var.dns_servers
+  mandatory_tags     = var.mandatory_tags
+  optional_tags      = var.optional_tags
+  custom_tags        = var.custom_tags
 }
 
 
- 
+

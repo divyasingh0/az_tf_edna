@@ -21,22 +21,13 @@ variable "location" {
   type        = string
 }
 
-variable "private_endpoint_subnet_name" {
-
-  description = "Subnet where storage private endpoint will be deployed"
-
-  type = string
-}
 
 variable "vnet_address_space" {
   description = "CIDR block for the VNet. E.g. 10.0.0.0/16"
   type        = string
 }
 
-variable "pe_subnet_prefix" {
-  description = "CIDR block for the PE subnet. Must sit inside vnet_address_space. E.g. 10.0.1.0/24"
-  type        = string
-}
+
 
 variable "dns_servers" {
   description = "Optional custom DNS servers."
@@ -44,7 +35,7 @@ variable "dns_servers" {
   default     = []
 }
 
- variable "mandatory_tags" {
+variable "mandatory_tags" {
   description = "Mandatory governance tags"
 
   type = object({
@@ -71,4 +62,8 @@ variable "custom_tags" {
   description = "Custom tags"
   type        = map(string)
   default     = {}
+}
+
+variable "pe_subnet_prefix" {
+  type = string
 }
