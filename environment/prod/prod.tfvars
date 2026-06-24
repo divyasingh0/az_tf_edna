@@ -14,9 +14,9 @@ environment         = "prod"
 location            = "eastus2"
 resource_group_name = "rg-edna-dev"
 
-vnet_address_space = "10.10.0.0/16"
-pe_subnet_prefix   = "10.10.1.0/24"
-
+vnet_address_space           = "10.10.0.0/16"
+pe_subnet_prefix             = "10.10.1.0/24"
+private_endpoint_subnet_name = "pesubnetnameprd"
 mandatory_tags = {
   environment_type    = "Development"
   department          = "EDNA"
