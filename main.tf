@@ -26,7 +26,7 @@
 # # Calls the platform-approved storage-account template by pinned Git tag.
 
 module "edna_storage" {
-  source = "git::https://github.com/divyasingh0/az_tf_templates.git//templates/stoarge-account?ref=47f7f69a6f1b29cefdf51502976b5c7fd67118fe"
+  source = "git::https://github.com/divyasingh0/az_tf_templates.git//templates/stoarge-account?ref=114964617cea3f4e1f68f7f9bf5c53e8c1a1c287"
 
   # variables...
   app_name            = var.app_name
