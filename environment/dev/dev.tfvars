@@ -25,7 +25,7 @@ mandatory_tags = {
   terraform           = "true"
   app                 = "EDNA"
   change_notification = "Email:edna@burlington.com+Teams:edna"
-  maintenance_window  = "sun-00:00-03:00"
+  maintenance_window  = "sun-00:00-01:00"
   criticality         = "medium"
   data_classification = "official-use"
 }
