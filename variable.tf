@@ -69,3 +69,7 @@ variable "custom_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "pe_subnet_prefix" {
+  type = string
+}
