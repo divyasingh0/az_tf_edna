@@ -21,12 +21,6 @@ variable "location" {
   type        = string
 }
 
-variable "private_endpoint_subnet_name" {
-
-  description = "Subnet where storage private endpoint will be deployed"
-
-  type = string
-}
 
 variable "vnet_address_space" {
   description = "CIDR block for the VNet. E.g. 10.0.0.0/16"
