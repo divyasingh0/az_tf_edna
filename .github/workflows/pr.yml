@@ -1,21 +1,23 @@
-name: Pull Request Validation
+name: Feature Branch Validation
 
 on:
-  pull_request:
-    branches:
-      - main
+push:
+branches:
+- 'feature/**'
 
 permissions:
-  id-token: write
-  contents: read
+id-token: write
+contents: read
 
 jobs:
-  validate:
+validate:
 
-    uses: divyasingh0/az_tf_workflow/.github/workflows/terraform-pr.yml@v1.0.0
 
-    with:
-      environment: dev
-      working_directory: .
+uses: divyasingh0/az_tf_workflow/.github/workflows/terraform-pr.yml@v1.0.0
 
-    secrets: inherit
+with:
+  environment: dev
+  working_directory: .
+
+secrets: inherit
+
