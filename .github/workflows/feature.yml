@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    uses: divyasingh0/az_tf_workflow/.github/workflows/terraform_pr.yml@v1.0.0
+    uses: divyasingh0/az_tf_workflow/.github/workflows/terraform_pr.yml@main
 
     with:
       environment: dev
