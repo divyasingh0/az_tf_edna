@@ -13,7 +13,7 @@ on:
 
 jobs:
   deploy:
-    uses: divyasingh0/az_tf_workflow/.github/workflows/terraform-application.yml@v1.0.0
+    uses: divyasingh0/az_tf_workflow/.github/workflows/terraform-application.yml@main
 
     with:
       environment: ${{ github.event.inputs.environment }}
